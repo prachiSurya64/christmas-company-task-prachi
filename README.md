@@ -1,16 +1,81 @@
-# React + Vite
+# Drawing Board  
+A lightweight, feature-rich drawing board built with "React", "Redux Toolkit", and HTML Canvas,
+supporting undo/redo, shapes, text, image upload, autosave, and PNG export.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+=> Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+:-- Drawing & Shapes  
+- Freehand brush  
+- Line  
+- Rectangle  
+- Circle  
+- Text tool with on-canvas editable overlay
 
-## React Compiler
+:-- Image Support  
+- Upload image (JPEG/PNG)  
+- Add to canvas with draggable positioning
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+:-- Scene Management  
+- Undo / Redo  
+- Clear Canvas  
+- Autosave to localStorage  
+- Load scene from URL (`?scene=` compressed with LZ-String)
 
-## Expanding the ESLint configuration
+:-- Export  
+- Export PNG  
+- Download PNG  
+- Share scene via compressed URL
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+:-- Tech Stack
+
+- ReactJS
+- Redux Toolkit
+- LZ-String for compression
+- React Icons
+- HTML Canvas API
+- Custom hooks, for autosave and scene loading etc.
+
+---
+
+=> Installation
+
+Clone the repository: git clone https://github.com/<your-username>/<your-repo>.git
+
+Install dependencies: npm install
+Run cmd: npm run dev -> http://localhost:5173/ (like)
+
+=> Folder Structure
+
+src/
+│── components/ ── home
+|   |     |         ├──Home.jsx
+|   |     ├── ── ──tools
+|   |                ├──BrusSizer.jsx
+|   |                ├──ColorPicker.jsx
+|   |                ├──ToolBtn.jsx
+│   |── Toolbar.jsx
+│   ├── CanvasSheet.jsx
+│   └── ShareBtn.jsx
+|
+│── config/
+│   └── toolsConfig.js
+│
+│── store/
+│   └── drawingBoard.js
+│
+│── hooks/
+│   ├── useRedraw.js
+│   ├── useCanvasHandler.js
+│   ├── useTextTool.js
+│   ├── useSceneLoader.js
+│   └── useAutoSave.js
+│
+│── utils/
+│   └── decompressScene.js
+│
+└── App.jsx
+
