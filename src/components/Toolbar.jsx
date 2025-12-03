@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { clearScene, redo, undo, setTool } from "../store/drawingBoard";
 
-// Icons
 import {
   FaUndo,
   FaRedo,
@@ -37,7 +36,6 @@ export default function Toolbar({
     onToolChange(tool);
   };
 
-  // ♻️ Undo/Redo/Clear config for optimized mapping
   const ACTION_BUTTONS = [
     {
       id: "undo",
@@ -59,7 +57,6 @@ export default function Toolbar({
     },
   ];
 
-  // 📤 Export / Download / Upload config
   const FILE_ACTIONS = [
     {
       id: "export",
@@ -97,7 +94,6 @@ export default function Toolbar({
         <BrushSizer size={size} setSize={setSize} />
       </div>
 
-      {/* ↩ Undo / Redo / Clear */}
       <div className="tool-section">
         {ACTION_BUTTONS.map((btn) => (
           <button key={btn.id} title={btn.title} onClick={btn.onClick}>
@@ -106,7 +102,6 @@ export default function Toolbar({
         ))}
       </div>
 
-      {/* 📤 Export / 📥 Download / Upload */}
       <div className="tool-section">
         {FILE_ACTIONS.map((btn) => (
           <button key={btn.id} title={btn.title} onClick={btn.onClick}>
@@ -114,7 +109,6 @@ export default function Toolbar({
           </button>
         ))}
 
-        {/* Upload remains special because of input[type=file] */}
         <label className="upload-btn" title="Upload PNG">
           <FaUpload />
           <input type="file" accept="image/*" onChange={onUploadChange} />

@@ -15,13 +15,12 @@ export default function CanvasSheet({ color, size }) {
   const containerRef = useRef(null);
   const drawingRef = useRef(null);
 
-  // Centralized redraw helper
   const fullRedraw = useRedraw(canvasRef, present);
 
-  // Text tool helper
+  
   const handleText = useTextTool(containerRef, dispatch, color, size);
 
-  // Canvas pointer handlers (brush + shapes + text)
+  
   const { onPointerDown, onPointerMove, onPointerUp } = useCanvasHandlers({
     tool,
     color,
@@ -33,7 +32,7 @@ export default function CanvasSheet({ color, size }) {
     fullRedraw,
   });
 
-  // Setup large canvas + redraw scene
+  
   useEffect(() => {
     const canvas = canvasRef.current;
     canvas.width = 6000;

@@ -1,7 +1,5 @@
 import { addElement } from "../store/drawingBoard";
 
-
-// All canvas interactions here for clean separation
 export default function useCanvasHandlers({
   tool,
   color,
@@ -12,7 +10,6 @@ export default function useCanvasHandlers({
   handleText,
   fullRedraw,
 }) {
-  // Convert pointer to canvas coordinates
   const getPos = (e) => {
     const rect = canvasRef.current.getBoundingClientRect();
     return { x: e.clientX - rect.left, y: e.clientY - rect.top };

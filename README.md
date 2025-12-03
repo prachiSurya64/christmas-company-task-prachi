@@ -54,7 +54,7 @@ src/
 │── components/ ── home
 |   |     |         ├──Home.jsx
 |   |     ├── ── ──tools
-|   |                ├──BrusSizer.jsx
+|   |                ├──BrushSizer.jsx
 |   |                ├──ColorPicker.jsx
 |   |                ├──ToolBtn.jsx
 │   |── Toolbar.jsx

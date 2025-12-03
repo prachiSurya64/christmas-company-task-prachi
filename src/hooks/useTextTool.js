@@ -1,7 +1,6 @@
 import { addElement } from "../store/drawingBoard";
 
 
-// Handles textarea creation + saving text to Redux
 export default function useTextTool(containerRef, dispatch, color, size) {
   return function handleText(pt) {
     const textarea = document.createElement("textarea");

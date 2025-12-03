@@ -21,7 +21,7 @@ I asked how sharing can work "without a server", where:
 - Sharing LocalStorage data between users is not possible
 
 AI recommended using:
-- "URL-based scene sharing"
+- URL-based scene sharing
 - With scene data "compressed" using LZ-String
 - So a friend can open the exact same state even without a backend
 

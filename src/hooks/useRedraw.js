@@ -1,4 +1,4 @@
-// Redraws entire scene from Redux store
+
 export default function useRedraw(canvasRef, present) {
   return function fullRedraw() {
     const canvas = canvasRef.current;
