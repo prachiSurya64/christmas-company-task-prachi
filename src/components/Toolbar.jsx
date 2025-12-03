@@ -29,7 +29,6 @@ export default function Toolbar({
   const dispatch = useDispatch();
   const [activeTool, setActiveTool] = useState("brush");
 
-  // 🔥 Handle tool switching + redux + parent callback
   const handleToolChange = (tool) => {
     setActiveTool(tool);
     dispatch(setTool(tool));
